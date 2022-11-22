@@ -1,0 +1,9 @@
+graphql:
+  packages:
+    - 'com.gamsoft.queckly.app.controller'
+okta:
+  oauth2:
+    issuer: 'https://dev-80565895.okta.com/oauth2/default'
+    client-id: '0oa7citulujeUdQ5z5d7'
+    client-secret: 'kN4z7UcqkXTqivGF2REeuVbl_hvmsqdjyvF2i2gg'
+    redirect-uri: '/authorization-code/callback'
