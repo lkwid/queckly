@@ -1,20 +1,22 @@
 graphql:
-  packages:
-    - 'com.gamsoft.queckly.app.controller'
+  packages: "com.queckly.app.controller"
+
+auth0:
+  audience: https://dev-80565895.okta.com
 
 spring:
   security:
     oauth2:
       client:
+        provider:
+          okta:
+            issuer-uri: ${okta-issuer}
         registration:
           okta:
             client-id: ${okta-client-id}
             client-secret: ${okta-client-secret}
-            redirect-uri: http://localhost:8080/login/oauth2/code/okta
+            redirect-uri: ${okta-redirect-uri}
             scope: openid,profile,email
-        provider:
-          okta:
-            issuer-uri: ${okta-issuer}
 
 logging:
   level:
