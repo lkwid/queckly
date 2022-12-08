@@ -1,0 +1,30 @@
+graphql:
+  packages: "com.queckly.app.controller"
+
+auth0:
+  audience: https://dev-80565895.okta.com
+
+spring:
+  main:
+    web-application-type: reactive
+  security:
+    oauth2:
+      client:
+        provider:
+          okta:
+            issuer-uri: ${okta-issuer}
+        registration:
+          okta:
+            client-id: ${okta-client-id}
+            client-secret: ${okta-client-secret}
+            redirect-uri: ${okta-redirect-uri}
+            scope: openid,profile,email
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${okta-jwk}
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
