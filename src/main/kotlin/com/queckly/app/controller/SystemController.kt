@@ -11,6 +11,6 @@ import reactor.core.publisher.Mono
 class SystemController {
     @GetMapping(produces = [MediaType.APPLICATION_JSON_VALUE])
     fun sayHello(): Mono<Greetings> = Mono.just(Greetings("Hello, Authenticated!"))
+    data class Greetings(val message: String)
 }
 
-data class Greetings(val message: String)

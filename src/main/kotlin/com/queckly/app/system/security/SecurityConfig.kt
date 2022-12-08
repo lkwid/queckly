@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity
 import org.springframework.security.config.web.server.ServerHttpSecurity
 import org.springframework.security.web.server.SecurityWebFilterChain
+import org.springframework.security.web.server.csrf.CookieServerCsrfTokenRepository
 
 @Configuration
 @EnableWebFluxSecurity
@@ -15,13 +16,13 @@ class SecurityConfig {
     @Bean
     fun webFilterChain(
         http: ServerHttpSecurity,
-//        reactiveClientRegistrationRepository: ReactiveClientRegistrationRepository,
+//        resolver: ReactiveClientRegistrationRepository,
     ): SecurityWebFilterChain? {
         return http
             .csrf()
-                .disable()
-//                .csrfTokenRepository(CookieServerCsrfTokenRepository.withHttpOnlyFalse())
-//            .and()
+//                .disable()
+                .csrfTokenRepository(CookieServerCsrfTokenRepository.withHttpOnlyFalse())
+            .and()
             .authorizeExchange()
                 .pathMatchers("/public").permitAll()
             .anyExchange()
@@ -29,15 +30,10 @@ class SecurityConfig {
             .and()
                 .oauth2Login()
             .and()
-//            .oauth2Login{auth -> auth.authorizationRequestResolver(pkceResolver(reactiveClientRegistrationRepository))}
+                .oauth2ResourceServer()
+                    .jwt()
+            .and().and()
             .build()
     }
-
-//    @Bean
-//    fun pkceResolver(repo: ReactiveClientRegistrationRepository): ServerOAuth2AuthorizationRequestResolver {
-//        val resolver = DefaultServerOAuth2AuthorizationRequestResolver(repo)
-//        resolver.setAuthorizationRequestCustomizer(OAuth2AuthorizationRequestCustomizers.withPkce())
-//        return resolver
-//    }
 
 }
