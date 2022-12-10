@@ -24,12 +24,16 @@ repositories {
 
 dependencies {
 	val gradleServerVersion: String by project
+	val oktaVersion: String by project
+	val oktaSdkVersion: String by project
 
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-amqp")
+	implementation("com.okta.spring:okta-spring-boot-starter:${oktaVersion}")
 	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
 	implementation("org.springframework.security:spring-security-oauth2-resource-server")
 	implementation("org.springframework.security:spring-security-oauth2-jose")
+	implementation("com.okta.spring:okta-spring-sdk:${oktaSdkVersion}")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

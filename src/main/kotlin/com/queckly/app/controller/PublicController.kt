@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/public")
 class PublicController {
-
     @GetMapping
     fun greetings(): String = "Welcome to Queckly. Building in progress."
-
 }
