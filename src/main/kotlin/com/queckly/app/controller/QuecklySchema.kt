@@ -8,4 +8,4 @@ import org.springframework.stereotype.Component
      - Echo -- a simple ping to the graphql
      - Users -- users management
 """)
-class QuecklySchema
+interface QuecklySchema
