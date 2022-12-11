@@ -1,13 +1,16 @@
 package com.queckly.app.controller.schema
 
 
-import com.expediagroup.graphql.server.operations.Query
+import com.expediagroup.graphql.server.operations.Query as GqlQuery
+import com.queckly.app.controller.QuecklySchema
 import org.springframework.stereotype.Component
 
-@Component
 @Suppress("unused")
-class EchoQuery : Query {
-    fun hello(): Greetings = Greetings("Hello Kotlin!")
-    data class Greetings(val message: String)
+class Echo : QuecklySchema {
 
+    @Component
+class Query : GqlQuery {
+        fun hello(): Greetings = Greetings("Hello Kotlin!")
+        data class Greetings(val message: String)
+    }
 }
