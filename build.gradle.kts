@@ -23,7 +23,8 @@ repositories {
 }
 
 dependencies {
-	val gradleServerVersion: String by project
+	val graphqlServerVersion: String by project
+	val loggingVersion: String by project
 	val oktaVersion: String by project
 	val oktaSdkVersion: String by project
 
@@ -40,11 +41,10 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-	implementation("com.expediagroup:graphql-kotlin-spring-server:${gradleServerVersion}")
-	compileOnly("org.projectlombok:lombok")
+	implementation("com.expediagroup:graphql-kotlin-spring-server:${graphqlServerVersion}")
+	implementation("io.github.microutils:kotlin-logging:${loggingVersion}")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-	annotationProcessor("org.projectlombok:lombok")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")

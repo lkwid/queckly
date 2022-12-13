@@ -1,6 +1,7 @@
 graphql:
   packages:
     - "com.queckly.app.controller"
+    - "com.queckly.app.controller.dto"
 
 okta:
   oauth2:
@@ -15,8 +16,8 @@ okta:
     jwt:
       jwk-set-uri: ${okta-jwk}
 
-logging:
-  level:
-    org:
-      springframework:
-        security: DEBUG
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security: INFO
