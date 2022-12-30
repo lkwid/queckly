@@ -4,8 +4,8 @@ import com.expediagroup.graphql.generator.annotations.GraphQLDescription
 import org.springframework.stereotype.Component
 @Component
 @GraphQLDescription("""
-    Queckly GraphQL schema. Consists of the following endpoints:
-     - Echo -- a simple ping to the graphql
-     - Users -- users management
+    Queckly GraphQL schema. Implemented by the following endpoints:
+     - EchoSchema -- a simple ping to the graphql
+     - UserSchema -- users management
 """)
 interface QuecklySchema

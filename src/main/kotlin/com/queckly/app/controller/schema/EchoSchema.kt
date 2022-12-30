@@ -6,7 +6,7 @@ import com.queckly.app.controller.QuecklySchema
 import org.springframework.stereotype.Component
 
 @Suppress("unused")
-class Echo : QuecklySchema {
+class EchoSchema : QuecklySchema {
     @Component
 class Query : GqlQuery {
         fun hello(): Greetings = Greetings("Hello Kotlin!")

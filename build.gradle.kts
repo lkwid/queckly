@@ -27,13 +27,11 @@ dependencies {
 	val loggingVersion: String by project
 	val oktaVersion: String by project
 	val oktaSdkVersion: String by project
+	val kotlinxTestVersion: String by project
 
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-amqp")
 	implementation("com.okta.spring:okta-spring-boot-starter:${oktaVersion}")
-	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
-	implementation("org.springframework.security:spring-security-oauth2-resource-server")
-	implementation("org.springframework.security:spring-security-oauth2-jose")
 	implementation("com.okta.spring:okta-spring-sdk:${oktaSdkVersion}")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -47,7 +45,7 @@ dependencies {
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${kotlinxTestVersion}")
 	testImplementation("org.springframework.amqp:spring-rabbit-test")
 }
 
