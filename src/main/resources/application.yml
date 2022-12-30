@@ -1,5 +1,6 @@
 graphql:
   packages:
+    - "com.queckly.app.service"
     - "com.queckly.app.controller"
     - "com.queckly.app.controller.dto"
 
@@ -15,6 +16,12 @@ okta:
   resourceserver:
     jwt:
       jwk-set-uri: ${okta-jwk}
+
+rabbitmq:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
 
 #logging:
 #  level:
