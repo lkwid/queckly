@@ -26,5 +26,5 @@ rabbitmq:
 #logging:
 #  level:
 #    org:
-#      springframework:
-#        security: INFO
+#      springframework: DEBUG
+

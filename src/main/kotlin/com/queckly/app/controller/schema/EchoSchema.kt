@@ -1,6 +1,5 @@
 package com.queckly.app.controller.schema
 
-
 import com.expediagroup.graphql.server.operations.Query as GqlQuery
 import com.queckly.app.controller.QuecklySchema
 import org.springframework.stereotype.Component
@@ -8,8 +7,9 @@ import org.springframework.stereotype.Component
 @Suppress("unused")
 class EchoSchema : QuecklySchema {
     @Component
-class Query : GqlQuery {
+    class Query : GqlQuery {
         fun hello(): Greetings = Greetings("Hello Kotlin!")
+
         data class Greetings(val message: String)
     }
 }

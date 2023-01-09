@@ -16,6 +16,11 @@ class UserSchema(
         private val service: UserService
     ) : GqlQuery {
         suspend fun listUsers(): List<UserDto> = service.getUsers()
+
+        suspend fun testError(message: String): String {
+            service.test(message)
+            return "Message sent"
+        }
     }
 
     @Component
@@ -37,7 +42,7 @@ class UserSchema(
             val id: String = service.save(userDTO)
             return "Registration OK (ID = $id)"
         }
-        suspend fun deleteById(id: String): String = service.deleteById(id)
+        suspend fun deleteByEmail(email: String): String = service.deleteByEmail(email)
     }
 
 }

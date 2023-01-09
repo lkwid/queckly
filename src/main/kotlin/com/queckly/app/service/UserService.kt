@@ -34,9 +34,13 @@ class UserService(
         return userDTO.id!!
     }
 
-    suspend fun deleteById(id: String): String {
+    suspend fun deleteByEmail(id: String): String {
         client.getUser(id).delete()
         return "OK"
+    }
+
+    suspend fun test(message: String) {
+        publisher.test(message)
     }
 
 }
